@@ -84,12 +84,28 @@ let monthText = textMonth(month)
 
 let year = date.getFullYear();
 let hours = date.getHours();
+
+
 let minutes = date.getMinutes();
 
-console.log(`${text}, ${daymonth} de ${monthText} de ${year}
-${hours}:${minutes}`);
+let dayWeekMonthYearsTime = `${text}, ${daymonth} de ${monthText} de ${year}
+${hours}:${minutes}`;
 
 
+const showTime = document.querySelector('h1');
+showTime.innerHTML = dayWeekMonthYearsTime;
+
+
+
+
+
+
+
+
+
+
+
+console.log(dayWeekMonthYearsTime);
 
 
 

@@ -88,14 +88,13 @@ let hours = date.getHours();
 
 let minutes = date.getMinutes();
 
-let dayWeekMonthYearsTime = `${text}, ${daymonth} de ${monthText} de ${year}
-${hours}:${minutes}`;
+let dayWeekMonthYears = `${text}, ${daymonth} de ${monthText} de ${year}`;
 
+const showDate = document.querySelector('#text');
+showDate.innerHTML = dayWeekMonthYears;
 
-const showTime = document.querySelector('h1');
-showTime.innerHTML = dayWeekMonthYearsTime;
-
-
+const showHours = document.querySelector('#hours');
+showHours.innerHTML = `${hours}:${minutes}`;
 
 
 

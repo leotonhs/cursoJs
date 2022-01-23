@@ -1,3 +1,8 @@
+const h1 = document.querySelector('.container h1');
+const data = new Date();
+
+//functions
+
 function textWeek(dayOfTheWeekText) {
     let text;
     switch (dayOfTheWeekText) {
@@ -71,43 +76,28 @@ function textMonth(month) {
     }
 }
 
+function zeroToLeft(num) {
+    return num >= 10 ? num : `0${num}`;
+}
 
-const date = new Date();
+function createData(data) {
 
-let dayOfTheWeekText = date.getDay();
-let text = textWeek(dayOfTheWeekText);
+    let dayOfTheWeekText = data.getDay();
+    let text = textWeek(dayOfTheWeekText);
 
-let daymonth = date.getDate();
+    let daymonth = data.getDate();
 
-let month = date.getMonth();
-let monthText = textMonth(month)
+    let month = data.getMonth();
+    let monthText = textMonth(month)
 
-let year = date.getFullYear();
-let hours = date.getHours();
+    let year = data.getFullYear();
 
+    let minutes = data.getMinutes();
 
-let minutes = date.getMinutes();
+    return (
+        `${text}, ${daymonth} de ${monthText} de ${year} ` +
+        `${zeroToLeft(data.getHours())}:${zeroToLeft(data.getMinutes())}`
+    );
+}
 
-let dayWeekMonthYears = `${text}, ${daymonth} de ${monthText} de ${year}`;
-
-const showDate = document.querySelector('#text');
-showDate.innerHTML = dayWeekMonthYears;
-
-const showHours = document.querySelector('#hours');
-showHours.innerHTML = `${hours}:${minutes}`;
-
-
-
-
-
-
-
-
-
-console.log(dayWeekMonthYearsTime);
-
-
-
-
-
-
+h1.innerHTML = createData(data);
